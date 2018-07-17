@@ -1,9 +1,9 @@
-package com.test.tools;
+package com.test.utils;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.Dimension;
 
-public class SlidingScreenTools {
+public class SwipeTools {
 
     /**
      * driver 操作句柄
@@ -12,7 +12,7 @@ public class SlidingScreenTools {
      */
 
     // 上滑
-    public static void swipeUP(AppiumDriver driver, int speed , int num){
+    public static void swipeUP(AppiumDriver driver, int speed , int num) throws InterruptedException {
         //获得屏幕分辨率/大小
         Dimension size = driver.manage().window().getSize();
 
@@ -25,13 +25,14 @@ public class SlidingScreenTools {
         //for循环，进行滑动次数操作
         for (int i = 0; i < num; i++){
             driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, speed);
+            Thread.sleep(3000);
         }
     }
 
 
 
     // 下滑
-    public static void swipeDown(AppiumDriver driver, int speed , int num){
+    public static void swipeDown(AppiumDriver driver, int speed , int num) throws InterruptedException {
         //获得屏幕分辨率/大小
         Dimension size = driver.manage().window().getSize();
 
@@ -43,14 +44,15 @@ public class SlidingScreenTools {
 
         //for循环，进行滑动次数操作
         for (int i = 0; i < num; i++){
-            driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, speed);
+            driver.swipe(width / 2, height / 4, width / 2, height * 3 / 4, speed);
+            Thread.sleep(3000);
         }
     }
 
 
 
     // 左滑
-    public static void swipeLeft(AppiumDriver driver, int speed , int num){
+    public static void swipeLeft(AppiumDriver driver, int speed , int num) throws InterruptedException {
         //获得屏幕分辨率/大小
         Dimension size = driver.manage().window().getSize();
 
@@ -62,14 +64,15 @@ public class SlidingScreenTools {
 
         //for循环，进行滑动次数操作
         for (int i = 0; i < num; i++){
-            driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, speed);
+            driver.swipe(height / 2, width * 3 / 4, height / 2, width / 4, speed);
+            Thread.sleep(3000);
         }
     }
 
 
 
     // 右滑
-    public static void swipeRight(AppiumDriver driver, int speed , int num){
+    public static void swipeRight(AppiumDriver driver, int speed , int num) throws InterruptedException {
         //获得屏幕分辨率/大小
         Dimension size = driver.manage().window().getSize();
 
@@ -81,7 +84,8 @@ public class SlidingScreenTools {
 
         //for循环，进行滑动次数操作
         for (int i = 0; i < num; i++){
-            driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, speed);
+            driver.swipe(height / 2, width / 4, height / 2, width * 3 / 4, speed);
+            Thread.sleep(3000);
         }
     }
 }
