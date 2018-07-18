@@ -62,7 +62,7 @@ public class InitAppium {
     public static String appActivity = "";
 
     public AndroidDriver<AndroidElement> driver;
-
+/*
     // 构造方法
     public InitAppium() {
         this(new Builder());
@@ -86,6 +86,7 @@ public class InitAppium {
         appPackage = builder.appPackage;
         appPath = builder.appPath;
     }
+    */
 
     /**
      * appium启动参数
@@ -125,7 +126,7 @@ public class InitAppium {
         // System.out.println("appActivity is: " +
         // capabilities.getCapability(appActivity));
         // 启动Driver
-        driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),
+        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),
                 capabilities);
         System.out.println("driver is:" + driver);
         System.out.println("beforeSuite over----");
