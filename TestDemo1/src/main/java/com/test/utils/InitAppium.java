@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import javafx.util.Builder;
 import org.apache.http.util.TextUtils;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
@@ -65,7 +66,7 @@ public class InitAppium {
 
     // 构造方法
     public InitAppium() {
-        this(new Builder());
+
     }
 
     public InitAppium(Builder builder) {
@@ -125,7 +126,7 @@ public class InitAppium {
         // System.out.println("appActivity is: " +
         // capabilities.getCapability(appActivity));
         // 启动Driver
-        driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),
+        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),
                 capabilities);
         System.out.println("driver is:" + driver);
         System.out.println("beforeSuite over----");
