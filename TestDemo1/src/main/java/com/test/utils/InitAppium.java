@@ -63,7 +63,7 @@ public class InitAppium {
     public static String appActivity = "";
 
     public AndroidDriver<AndroidElement> driver;
-
+/*
     // 构造方法
     public InitAppium() {
 
@@ -87,6 +87,7 @@ public class InitAppium {
         appPackage = builder.appPackage;
         appPath = builder.appPath;
     }
+    */
 
     /**
      * appium启动参数
